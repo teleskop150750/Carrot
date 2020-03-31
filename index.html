@@ -8,14 +8,19 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/order.css">
 </head>
 
 <body>
+
     <header class="header">
         <div class="container">
             <div class="header__nav-wrap">
                 <div class="header__logo">
-                    <img src="img/Icarrot_11.svg" alt="logo">
+                    <svg class="header__logo-img">
+                        <use xlink:href="svg/sprite.svg#logo"></use>
+                    </svg>
+                    <!-- <img src="img/Icarrot_11.svg" alt="logo"> -->
                 </div>
                 <nav class="header__nav nav">
                     <ul class="nav__list">
@@ -38,6 +43,26 @@
             </div>
         </div>
     </header>
+    <main>
+        <section class="order">
+            <div class="container">
+                <h2 class="order__title title">Оформит заказ</h2>
+            </div>
+        </section>
+
+
+        <!-- <style>
+            .icon {
+                fill: #C2185b;
+                width: 100px;
+            }
+
+            .icon:hover {
+                fill: #e040fb;
+                width: 100px;
+            }
+        </style> -->
+    </main>
 </body>
 
 </html>

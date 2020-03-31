@@ -17,10 +17,15 @@
     position: relative;
 }
 
-.header__logo img {
+.header__logo-img {
     position: absolute;
     height: 100%;
-    fill: yellowgreen;
+    fill: #f7e2cb;
+}
+.header__logo-img:hover {
+    position: absolute;
+    height: 100%;
+    fill: var(--icolor);
 }
 
 .nav{
@@ -43,6 +48,7 @@
 }
 
 .header__title{
+    height: 100%;
     color: var(--white);
     font-size: 2.8em;
 }

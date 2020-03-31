@@ -1,7 +1,7 @@
 :root {
     --width: 1160px;
     --icolor: #ec8000;
-    --white: #ffffff;
+    --white: #e7ebee;
 }
 
 .container{
@@ -24,4 +24,19 @@ body{
     font-family: 'Montserrat',
     Arial,
     sans-serif;
+}
+
+.title{
+    font-size: 3.5em;
+    color: var(--icolor);
+}
+
+.icon {
+    fill: #C2185b;
+    width: 100px;
+}
+
+.icon:hover {
+    fill: #e040fb;
+    width: 100px;
 }
