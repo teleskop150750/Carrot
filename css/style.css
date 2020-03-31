@@ -1,0 +1,27 @@
+:root {
+    --width: 1160px;
+    --icolor: #ec8000;
+    --white: #ffffff;
+}
+
+.container{
+    max-width: 1440px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+}
+
+body{
+    font-family: 'Montserrat',
+    Arial,
+    sans-serif;
+}
