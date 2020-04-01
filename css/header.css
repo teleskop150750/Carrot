@@ -20,7 +20,7 @@
 .header__logo-img {
     position: absolute;
     height: 100%;
-    fill: #f7e2cb;
+    fill: var(--icolor);
 }
 .header__logo-img:hover {
     position: absolute;
@@ -50,5 +50,5 @@
 .header__title{
     height: 100%;
     color: var(--white);
-    font-size: 2.8em;
+    font-size: 3.2em;
 }
