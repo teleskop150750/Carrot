@@ -17,14 +17,13 @@
 
 	/* display: grid;
     grid-template-columns: repeat(2, min-content);
-    grid-column-gap: 2em; */
-}
-
-.form__column-first {
+	grid-column-gap: 2em; */
+	
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-auto-rows: max-content;
 }
+
 
 .form__label {
 	grid-column: 4 span;
@@ -170,4 +169,5 @@
 	background: var(--icolor);
 	border: none;
 	border-radius: 0.3em;
+	cursor: pointer;
 }

@@ -9,10 +9,10 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/order.css">
+	<link rel="stylesheet" href="css/comments.css">
 </head>
 
 <body>
-
 	<header class="header">
 		<div class="container ">
 			<div class="header__wrap">
@@ -38,7 +38,7 @@
 				</div>
 
 				<div class="header__title">
-					<h1>Доставка<br> еды
+					<h1>Доставка<br> продуктов
 						по Новомосковску</h1>
 				</div>
 				<button type="button" class="header__arrow">
@@ -50,39 +50,70 @@
 		</div>
 		<!-- <div class="dark"></div> -->
 	</header>
+
 	<main>
 		<section class="order">
 			<div class="container">
 				<h2 class="order__title title">Оформит заказ</h2>
-				<form action="" class="order__fotm form">
+				<form action="" class="order__form form">
 
-					<div class="form__column-first">
-						<label for="name" class="form__label">ФИО</label>
-						<input type="text" id="name" value="12" class="form__input">
+					<label for="name" class="form__label">ФИО</label>
+					<input type="text" id="name" class="form__input">
 
-						<label for="tel" class="form__label">Телефон</label>
-						<input type="tel" id="tel" value="12" class="form__input">
+					<label for="tel" class="form__label">Телефон</label>
+					<input type="tel" id="tel" class="form__input">
 
-						<p class="form__label">Выбрать магазин</p>
-						<button class="form__selsect form__input" type="button">Пятерочка</button>
+					<p class="form__label">Выбрать магазин</p>
+					<button class="form__selsect form__input" type="button">Пятерочка</button>
 
-						<p class="form__label">Укажите продукты</p>
+					<p class="form__label">Укажите продукты</p>
 
-						<label class="form__check-label label-ch">
-							<input type="checkbox" name="a" checked class="form__check visually-hidden">
-							<span class="check-box"></span>
-							передать курьеру
-						</label>
+					<label class="form__check-label label-ch">
+						<input type="checkbox" name="a" checked class="form__check visually-hidden">
+						<span class="check-box"></span>
+						передать курьеру
+					</label>
 
-						<textarea name="" cols="30" rows="10" class="form__textarea"></textarea>
+					<textarea name="" cols="30" rows="10" class="form__textarea"></textarea>
 
-						<button type="button" class="form__button">Оформить</button>
-
-					</div>
-
-
+					<button type="button" class="form__button">Оформить</button>
 
 				</form>
+			</div>
+		</section>
+
+		<section class="comments">
+			<div class="container">
+				<h2 class="order__title title">Оставить комментарий</h2>
+				<form action="" class="comments__form">
+					<div class=" form form-comm">
+						<input type="text" class="form-comm__input" placeholder="Имя">
+						<input type="text" class="form-comm__input" placeholder="Текст">
+					</div>
+					<button type="button" class="form__button form-comm__button">отправить</button>
+				</form>
+
+				<article class="comments__comment">
+					<div class="comment__avatar"></div>
+					<div class="comment__body">
+						<p class="comment__name">Иван</p>
+						<p class="comment__text">Быстрая доставка. Хорошая техподдержка</p>
+					</div>
+				</article>
+				<article class="comments__comment">
+					<div class="comment__avatar"></div>
+					<div class="comment__body">
+						<p class="comment__name">Иван</p>
+						<p class="comment__text">Быстрая доставка. Хорошая техподдержка</p>
+					</div>
+				</article>
+				<article class="comments__comment">
+					<div class="comment__avatar"></div>
+					<div class="comment__body">
+						<p class="comment__name">Иван</p>
+						<p class="comment__text">Быстрая доставка. Хорошая техподдержка</p>
+					</div>
+				</article>
 			</div>
 		</section>
 	</main>
