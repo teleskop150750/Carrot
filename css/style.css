@@ -1,42 +1,58 @@
 :root {
-    --width: 1160px;
-    --icolor: #ec8000;
-    --white: #ffffff;
+	--width: 1160px;
+	--icolor: #ec8000;
+	--white: #ffffff;
 }
 
-.container{
-    max-width: 1440px;
-    padding: 0 30px;
-    margin: 0 auto;
+.container {
+	max-width: 1440px;
+	padding: 0 15px;
+	margin: 0 auto;
 }
 
 
 *,
 *::before,
-*::after{
-    box-sizing: border-box;
-}
-*{
-    margin: 0;
+*::after {
+	box-sizing: border-box;
 }
 
-body{
-    font-family: 'Montserrat',
-    Arial,
-    sans-serif;
+* {
+	margin: 0;
 }
 
-.title{
-    font-size: 3.5em;
-    color: var(--icolor);
+*:focus {
+	outline: 2px solid rgb(30, 100, 204);
+}
+
+body {
+	font-family: 'Montserrat',
+		Arial,
+		sans-serif;
+}
+
+.title {
+	font-size: 1.9em;
+	color: var(--icolor);
 }
 
 .icon {
-    fill: #C2185b;
-    width: 100px;
+	fill: #C2185b;
+	width: 100px;
 }
 
 .icon:hover {
-    fill: #e040fb;
-    width: 100px;
+	fill: #e040fb;
+	width: 100px;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: -1px;
+	height: -1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
 }

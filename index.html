@@ -2,95 +2,90 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/order.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/order.css">
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="container">
-            <div class="header__nav-wrap">
-                <div class="header__logo">
-                    <svg class="header__logo-img">
-                        <use xlink:href="svg/sprite.svg#logo"></use>
-                    </svg>
-                    <!-- <img src="img/Icarrot_11.svg" alt="logo"> -->
-                </div>
-                <nav class="header__nav nav">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="" class="nav__link">О наc</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="" class="nav__link">Отзовы</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="" class="nav__link">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+	<header class="header">
+		<div class="container ">
+			<div class="header__wrap">
+				<div class="header__nav-wrap">
+					<div class="header__logo">
+						<svg class="header__logo-img">
+							<use xlink:href="svg/sprite.svg#logo"></use>
+						</svg>
+					</div>
+					<nav class="header__nav nav">
+						<ul class="nav__list">
+							<li class="nav__item">
+								<a href="" class="nav__link">О наc</a>
+							</li>
+							<li class="nav__item">
+								<a href="" class="nav__link">Отзовы</a>
+							</li>
+							<li class="nav__item">
+								<a href="" class="nav__link">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
 
-            <div class="header__title">
-                <h1>Доставка еды<br>
-                    по Новомосковску</h1>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="order">
-            <div class="container">
-                <h2 class="order__title title">Оформит заказ</h2>
-                <form action="" class="order__fotm form">
-                           <div class="form__column-second">
+				<div class="header__title">
+					<h1>Доставка<br> еды
+						по Новомосковску</h1>
+				</div>
+				<button type="button" class="header__arrow">
+					<svg class="header__arrow-img">
+						<use xlink:href="svg/sprite.svg#arrow"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+		<!-- <div class="dark"></div> -->
+	</header>
+	<main>
+		<section class="order">
+			<div class="container">
+				<h2 class="order__title title">Оформит заказ</h2>
+				<form action="" class="order__fotm form">
 
+					<div class="form__column-first">
+						<label for="name" class="form__label">ФИО</label>
+						<input type="text" id="name" value="12" class="form__input">
 
-                               <p class="form__label">Указать продукты</p>
-                               <label class="form__label-r label-ch">
-                                   <input type="checkbox" name="a" checked class="form__check">
-                                   <span class="check-box"></span>
-                                   передать курьеру
-                               </label>
-                               <textarea name="" id="" class="form__textaria"></textarea>
-                           </div>
-                    <div class="form__column-first">
-                        <label for="" class="form__label">ФИО</label>
-                        <input type="text" class="form__input">
+						<label for="tel" class="form__label">Телефон</label>
+						<input type="tel" id="tel" value="12" class="form__input">
 
-                        <label for="" class="form__label">Выбрать магазин</label>
-                        <button class="form__selsect form__input" type="button">Пятерочка</button>
+						<p class="form__label">Выбрать магазин</p>
+						<button class="form__selsect form__input" type="button">Пятерочка</button>
 
+						<p class="form__label">Укажите продукты</p>
 
-                        <p>Способ оплаты</p>
+						<label class="form__check-label label-ch">
+							<input type="checkbox" name="a" checked class="form__check visually-hidden">
+							<span class="check-box"></span>
+							передать курьеру
+						</label>
 
-                        <div class="">
-                            <label class="form__label-r">
-                                <input type="radio" name="a" checked class="form__radio">
-                                <span class="radio-box"></span>
-                                наличными
-                            </label>
-                            <label class="form__label-r">
-                                <input type="radio" name="a" class="form__radio">
-                                <span class="radio-box"></span>
-                                картой
-                            </label>
-                        </div>
-                    <button type="button" class="form__button">Оформить</button>
+						<textarea name="" cols="30" rows="10" class="form__textarea"></textarea>
 
-                    </div>
-             
+						<button type="button" class="form__button">Оформить</button>
+
+					</div>
 
 
-                </form>
-            </div>
-        </section>
-    </main>
+
+				</form>
+			</div>
+		</section>
+	</main>
 </body>
 
 </html>
