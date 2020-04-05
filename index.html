@@ -28,13 +28,13 @@
 					<nav class="header__nav nav">
 						<ul class="nav__list">
 							<li class="nav__item">
-								<a href="#a1" class="nav__link a1">О наc</a>
+								<a href="#sectiin-1" class="nav__link scroll">О наc</a>
 							</li>
 							<li class="nav__item">
-								<a href="#a2" class="nav__link">Отзывы</a>
+								<a href="#sectiin-2" class="nav__link scroll">Отзывы</a>
 							</li>
 							<li class="nav__item">
-								<a href="#a3" class="nav__link">Контакты</a>
+								<a href="#sectiin-3" class="nav__link scroll">Контакты</a>
 							</li>
 						</ul>
 					</nav>
@@ -44,18 +44,18 @@
 					<h1>Доставка<br>продуктов
 						по Новомосковску</h1>
 				</div>
-				<button type="button" class="header__arrow">
+				<a href="#sectiin-1" class="header__arrow scroll">
 					<svg class="header__arrow-img">
 						<use xlink:href="svg/sprite.svg#arrow"></use>
 					</svg>
-				</button>
+				</a>
 			</div>
 		</div>
 		<div class="dark"></div>
 	</header>
 
 	<main>
-		<section id="#a1" class="description">
+		<section id="sectiin-1" class="description">
 			<div class="container">
 				<h2 class="description__title title">О нас</h2>
 				<p class="description__text">
@@ -103,20 +103,20 @@
 					<p class="form__label">Укажите продукты</p>
 
 					<label class="form__check-label label-ch">
-						<input type="checkbox" name="a" checked class="form__check visually-hidden">
+						<input type="checkbox" name="a" class="form__check visually-hidden">
 						<span class="check-box"></span>
 						передать курьеру
 					</label>
 
-					<textarea name="" disabled class="form__textarea input-form"></textarea>
+					<textarea name="" class="form__textarea input-form"></textarea>
 
-					<button type="button" class="form__button">Оформить</button>
+					<button type="submit" class="form__button">Оформить</button>
 
 				</form>
 			</div>
 		</section>
 
-		<section id="#a2" class="comments">
+		<section id="sectiin-2" class="comments">
 			<div class="container">
 				<h2 class="order__title title">Оставить комментарий</h2>
 				<form action="" class="comments__form">
@@ -145,7 +145,7 @@
 					<!-- <div class="comment__avatar"></div> -->
 					<div class="comment__body">
 						<p class="comment__name">Иван</p>
-						<p class="comment__text">,пыстрая доставка. орошая техподдержка</p>
+						<p class="comment__text">быстрая доставка. орошая техподдержка</p>
 					</div>
 				</article>
 				<article class="comments__comment">
@@ -159,14 +159,14 @@
 					<!-- <div class="comment__avatar"></div> -->
 					<div class="comment__body">
 						<p class="comment__name">Иван</p>
-						<p class="comment__text">пыстрая доставка. орошая техподдержка</p>
+						<p class="comment__text">быстрая доставка. орошая техподдержка</p>
 					</div>
 				</article>
 			</div>
 		</section>
 	</main>
 
-	<footer id="#a3" class="footer">
+	<footer id="sectiin-3" class="footer">
 		<div class="container">
 			<h2 class="footer__title title">Контакты</h2>
 			<div class="footer_wrap">
@@ -213,6 +213,7 @@
 	 </script> -->
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/select.js"></script>
+	<script src="js/check.js"></script>
 	<script src="js/scroll.js"></script>
 </body>
 
