@@ -1,0 +1,27 @@
+.footer {
+	padding: 2.5em 0 5.0em;
+}
+
+.footer__title {
+	margin-bottom: 1.1em;
+}
+
+.footer_wrap {
+	display: flex;
+}
+
+.footer__inst {
+	height: 50px;
+	width: 50px;
+	position: relative;
+	margin-right: 1.5em;
+}
+
+.footer__link {
+	align-self: flex-end;
+}
+
+.footer__link a {
+	color: #d8d8d8;
+	font-size: 1.2em;
+}
