@@ -1,11 +1,12 @@
 :root {
 	--width: 1160px;
-	--icolor: #ec8000;
+	/* --icolor: #ec8000; */
+	--icolor: #ee7d12;
 	--white: #ffffff;
 }
 
 .container {
-	/* max-width: 425px; */
+	max-width: 425px;
 	padding: 0 15px;
 	margin: 0 auto;
 }
@@ -22,7 +23,7 @@
 }
 
 *:focus {
-	outline: 2px solid rgb(30, 100, 204);
+	outline: 1px solid rgb(30, 100, 204);
 }
 
 body {

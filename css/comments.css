@@ -1,6 +1,8 @@
 .comments {
-	padding: 2.0em 0;
-	background: #ffffff;
+	padding: 2.5em 0 2.5em;
+	background: rgb(255, 255, 255);
+	background: #181c27;
+	background: #222222;
 }
 
 .comments__form {
@@ -13,6 +15,7 @@
 
 .form-comm {
 	grid-column: 4 span;
+	background: rgb(20, 20, 20);
 }
 
 .form-comm__input {
@@ -28,14 +31,25 @@
 	font-size: 0.8em;
 
 	border: none;
+	background: none;
 	border-bottom: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid #252525;
+	color: #757575;
+}
+
+.form-comm__input:focus {
+	outline: none;
+	border-bottom: 1px solid var(--icolor);
 }
 
 .form-comm__button {
 	justify-self: end;
 	background: #333;
-	box-shadow: 0px 6px 13px 0px rgba(36, 36, 36, 0.69);
+	background: #3b33b2;
+	/* box-shadow: 0px 6px 13px 0px rgba(36, 36, 36, 0.69); */
+	box-shadow: 0 3px 25px 0px #3b33b2;
 	margin-top: 1em;
+	border-radius: 0.7em;
 }
 
 
@@ -64,7 +78,7 @@
 .comment__name {
 	font-size: 0.9em;
 	font-weight: 600;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.2em;
 }
 
 .comments__comment:nth-child(even) {

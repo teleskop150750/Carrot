@@ -1,19 +1,26 @@
 .order {
-	padding: 2.0em 0;
+	padding: 5em 0 5.0em;
 	background: #f0f5f7;
+	background: #151821;
+	background: #252525;
+	background: #222222;
+	/* background: linear-gradient(to right, #252525, #363636); */
 }
 
 .order__title {
-	margin-bottom: 1.3em;
+	margin-bottom: 1.1em;
 }
 
 .form {
 	padding: 1em 0.9em;
+	color: #e7e7e7;
 	font-size: 1.5rem;
 	/* border: 1px solid #838383; */
 	border-radius: 0.5em;
-	background: #feffff;
-	box-shadow: 0px 10px 21px 0px rgba(144, 138, 138, 0.17);
+	/* background: #feffff; */
+	background: #1a1a1a;
+	/* box-shadow: 0px 10px 21px 0px rgba(144, 138, 138, 0.17); */
+	box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.35);
 
 	/* display: grid;
     grid-template-columns: repeat(2, min-content);
@@ -44,16 +51,19 @@
 	font-family: inherit;
 	font-weight: 500;
 	font-size: 0.8em;
+	color: #d1d1d1;
 
-	border: 1px solid rgb(226, 226, 226);
-	border: 1px solid var(--icolor);
+	/* border: 1px solid rgb(226, 226, 226); */
+	border: none;
 	border-radius: 4px;
 	background: none;
+	background: #2c2c2c;
 }
 
-.form__input:focus,
-.form__input:hover {
-	outline: 2px solid rgb(30, 100, 204);
+.form__input:focus {
+	/* outline: 2px solid rgb(30, 100, 204); */
+	box-shadow: 0 1px var(--icolor);
+	outline: none;
 }
 
 .form__selsect {
@@ -73,12 +83,10 @@
 	border-color: #ffa200 transparent transparent transparent;
 }
 
-.form__selsect:focus,
-.form__selsect:hover {
-	box-sizing: border-box;
+/* .form__selsect:focus{
 	border: 1px solid var(--icolor);
 	outline: none;
-}
+} */
 
 .form__check-label {
 	grid-column: 4 span;
@@ -110,10 +118,11 @@
 	left: 0;
 	transform: translateY(-50%);
 	border: 1px solid var(--icolor);
+	border-radius: 6px;
 }
 
 .form__check:focus+span {
-	outline: 2px solid rgb(30, 100, 204);
+	outline: 1px solid rgb(30, 100, 204);
 }
 
 .form__check:checked+.check-box::before {
@@ -154,6 +163,13 @@
 	font-weight: 500;
 	font-size: 0.8em;
 	height: 160px;
+	border: none;
+	background: #2c2c2c;
+}
+.form__textarea:focus {
+	/* outline: 2px solid rgb(30, 100, 204); */
+	box-shadow: 0 1px var(--icolor);
+	outline: none;
 }
 
 .form__button {
@@ -162,12 +178,14 @@
 	padding: 0.6em 1.5em;
 	margin-top: 2.3em;
 
-	font-size: 0.7em;
+	font-size: 0.65em;
 	color: #ffffff;
 	text-transform: uppercase;
 
 	background: var(--icolor);
+	background: linear-gradient(to right, rgb(241, 105, 17), rgba(247, 173, 13, 0.774));
 	border: none;
 	border-radius: 0.3em;
+	border-radius: 0.6em;
 	cursor: pointer;
 }
