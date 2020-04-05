@@ -1,0 +1,14 @@
+.description {
+	padding: 5.0em 0 2.5em;
+	color: #d8d8d8
+}
+.description__title{
+	margin-bottom: 1.1em;
+}
+
+.description__text {
+	margin-bottom: 1.2em;
+	font-size: 1.3em;
+	line-height: 1.2em;
+	letter-spacing: 0.05em;
+}

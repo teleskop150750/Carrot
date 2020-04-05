@@ -1,8 +1,5 @@
 .comments {
 	padding: 2.5em 0 2.5em;
-	background: rgb(255, 255, 255);
-	background: #181c27;
-	background: #222222;
 }
 
 .comments__form {
@@ -15,7 +12,6 @@
 
 .form-comm {
 	grid-column: 4 span;
-	background: rgb(20, 20, 20);
 }
 
 .form-comm__input {
@@ -32,7 +28,6 @@
 
 	border: none;
 	background: none;
-	border-bottom: 1px solid rgb(0, 0, 0);
 	border-bottom: 1px solid #252525;
 	color: #757575;
 }
@@ -44,9 +39,7 @@
 
 .form-comm__button {
 	justify-self: end;
-	background: #333;
 	background: #3b33b2;
-	/* box-shadow: 0px 6px 13px 0px rgba(36, 36, 36, 0.69); */
 	box-shadow: 0 3px 25px 0px #3b33b2;
 	margin-top: 1em;
 	border-radius: 0.7em;
