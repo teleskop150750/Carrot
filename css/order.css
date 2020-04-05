@@ -33,18 +33,18 @@
 
 	display: block;
 	max-width: 100%;
-	padding: 0.3em;
+	padding: 0.4em;
 	margin-bottom: 0.8em;
 
 	font-family: inherit;
 	font-weight: 500;
-	font-size: 0.8em;
+	font-size: 0.72em;
 	color: #d1d1d1;
 
 	border: none;
 	border-radius: 4px;
 	background: none;
-	background: #2c2c2c;
+	background: #1d1d1d;
 }
 
 .form__input:focus {
@@ -136,15 +136,19 @@
 
 .form__textarea {
 	grid-column: 4 span;
+	height: 160px;
 	max-width: 100%;
+	padding: 0.4em;
 	resize: none;
 
 	font-family: inherit;
 	font-weight: 500;
-	font-size: 0.8em;
-	height: 160px;
+	font-size: 0.72em;
+	color: #d1d1d1;
+	
 	border: none;
-	background: #2c2c2c;
+	background: #1d1d1d;
+	;
 }
 .form__textarea:focus {
 	box-shadow: 0 1px var(--icolor);
