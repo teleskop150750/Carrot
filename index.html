@@ -1,3 +1,20 @@
+<?php
+session_start();
+// if (!empty($_POST["co"])) {
+// 	header("Location: " . $_SERVER["REQUEST_URI"]);
+// }
+$count = $_SESSION['countr'] ?? 2;
+if (isset($_POST['k'])) {
+	$count += 2;
+} else {
+	$count = 2;
+}
+$_SESSION['countr'] = $count;
+echo $count;
+require_once(__DIR__ . '/php/connect.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -77,7 +94,7 @@
 
 		<section class="order">
 			<div class="container">
-				<h2 class="order__title title">Оформит заказ</h2>
+				<h2 class="order__title title">Оформить заказ</h2>
 				<form action="" class="order__form form">
 
 					<label for="name" class="form__label">ФИО</label>
@@ -92,8 +109,8 @@
 							<option value="One">Пятерочка</option>
 							<option value="Two">Верный</option>
 							<option value="Three">Магнит</option>
-							<option value="Four">Карусель</option>
 							<option value="Five">Перекресток</option>
+							<option value="Four">Другой магазин</option>
 						</select>
 					</div>
 
@@ -118,50 +135,21 @@
 
 		<section id="sectiin-2" class="comments">
 			<div class="container">
-				<h2 class="order__title title">Оставить комментарий</h2>
-				<form action="" class="comments__form">
+				<h2 class="order__title title">Оставить отзыв</h2>
+				<form action="index.php" method="POST" class="comments__form">
 					<div class=" form form-comm">
-						<input type="text" class="form-comm__input" placeholder="Имя">
-						<input type="text" class="form-comm__input" placeholder="Текст">
+						<input type="text" class="form-comm__input" name="nameCom" id="nameCom" placeholder="Имя">
+						<input type="text" class="form-comm__input" name="textCom" id="textCom" placeholder="Текст">
 					</div>
-					<button type="button" class="form__button form-comm__button">отправить</button>
+					<button type="button" class="form__button form-comm__button" id="btnCom">отправить</button>
 				</form>
 
-				<article class="comments__comment">
-					<!-- <div class="comment__avatar"></div> -->
-					<div class="comment__body">
-						<p class="comment__name">Иван</p>
-						<p class="comment__text">Быстрая доставка. Хорошая техподдержка</p>
-					</div>
-				</article>
-				<article class="comments__comment">
-					<!-- <div class="comment__avatar"></div> -->
-					<div class="comment__body">
-						<p class="comment__name">Иван</p>
-						<p class="comment__text">Быстрая доставка. Хорошая техподдержка</p>
-					</div>
-				</article>
-				<article class="comments__comment">
-					<!-- <div class="comment__avatar"></div> -->
-					<div class="comment__body">
-						<p class="comment__name">Иван</p>
-						<p class="comment__text">быстрая доставка. орошая техподдержка</p>
-					</div>
-				</article>
-				<article class="comments__comment">
-					<!-- <div class="comment__avatar"></div> -->
-					<div class="comment__body">
-						<p class="comment__name">Иван</p>
-						<p class="comment__text">Быстрая доставка. Хорошая техподдержка</p>
-					</div>
-				</article>
-				<article class="comments__comment">
-					<!-- <div class="comment__avatar"></div> -->
-					<div class="comment__body">
-						<p class="comment__name">Иван</p>
-						<p class="comment__text">быстрая доставка. орошая техподдержка</p>
-					</div>
-				</article>
+				<div id="comBody"></div>
+
+				<form action="index.php" method="post" class="comments__form">
+					<button type="submit" name="k" class="form__button form-comm__button">показать еще</button>
+				</form>
+
 			</div>
 		</section>
 	</main>
@@ -208,12 +196,44 @@
 		</div>
 	</footer>
 
-	 <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+	<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 	 	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
 	 </script> -->
-	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery-3.4.1.js"></script>
 	<script src="js/select.js"></script>
 	<script src="js/check.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#btnCom").bind("click", function () {
+				console.log(4);
+				var nameCom = $('#nameCom').val();
+				var textCom = $('#textCom').val();
+				console.log(nameCom);
+				console.log(textCom);
+
+				$('#nameCom').val('');
+				$('#textCom').val('');
+
+				$.ajax({
+					url: "form2.php",
+					type: "POST",
+					headers: {
+						'Access-Control-Allow-Origin': '*'
+					},
+					data: {
+						name: nameCom,
+						text: textCom,
+					}, // Передаем данные для записи
+					dataType: "json",
+					success: function (res) {
+
+						console.log(5);
+					}
+				});
+				return false;
+			});
+		});
+	</script>
 	<script src="js/scroll.js"></script>
 </body>
 
