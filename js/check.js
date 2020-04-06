@@ -1,15 +1,14 @@
 let checkL = document.querySelector('.form__check-label');
-checkL.addEventListener('mousedown', ch);
-checkL.addEventListener('keydown', ch);
+checkL.addEventListener('mousedown', mouse);
+checkL.addEventListener('keydown', key);
 
-function cg(e) {
-	if (e.keydown == 'Space') {
+function key(e) {
+	if (e.keyCode == 32) {
 		ch();
 	}
-
 }
 
-function ch() {
+function mouse(e) {
 	let chB = document.querySelector('.form__check');
 	let text = document.querySelector('.form__textarea');
 	if (!chB.checked) {

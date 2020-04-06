@@ -1,20 +1,3 @@
-<?php
-session_start();
-// if (!empty($_POST["co"])) {
-// 	header("Location: " . $_SERVER["REQUEST_URI"]);
-// }
-$count = $_SESSION['countr'] ?? 2;
-if (isset($_POST['k'])) {
-	$count += 2;
-} else {
-	$count = 2;
-}
-$_SESSION['countr'] = $count;
-echo $count;
-require_once(__DIR__ . '/php/connect.php');
-
-?>
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -58,7 +41,7 @@ require_once(__DIR__ . '/php/connect.php');
 				</div>
 
 				<div class="header__title">
-					<h1>Доставка<br>продуктов
+					<h1>Доставка<br>продуктов<br>
 						по Новомосковску</h1>
 				</div>
 				<a href="#sectiin-1" class="header__arrow scroll">
@@ -114,9 +97,6 @@ require_once(__DIR__ . '/php/connect.php');
 						</select>
 					</div>
 
-					<!-- <button class="form__selsect form__input" type="button">Пятерочка</button> -->
-
-
 					<p class="form__label">Укажите продукты</p>
 
 					<label class="form__check-label label-ch">
@@ -137,7 +117,7 @@ require_once(__DIR__ . '/php/connect.php');
 			<div class="container">
 				<h2 class="order__title title">Оставить отзыв</h2>
 				<form action="index.php" method="POST" class="comments__form">
-					<div class=" form form-comm">
+					<div class="form form-comm">
 						<input type="text" class="form-comm__input" name="nameCom" id="nameCom" placeholder="Имя">
 						<input type="text" class="form-comm__input" name="textCom" id="textCom" placeholder="Текст">
 					</div>
@@ -145,9 +125,14 @@ require_once(__DIR__ . '/php/connect.php');
 				</form>
 
 				<div id="comBody"></div>
-
+				<!-- <article class="comments__comment">
+					<div class="comment__body">
+						<p class="comment__name">Иван</p>
+						<p class="comment__text">Быстрая доставка. Хорошая техподдержка</p>
+					</div>
+				</article> -->
 				<form action="index.php" method="post" class="comments__form">
-					<button type="submit" name="k" class="form__button form-comm__button">показать еще</button>
+					<button type="submit" class="form__button form-comm__button">показать еще</button>
 				</form>
 
 			</div>
@@ -161,8 +146,7 @@ require_once(__DIR__ . '/php/connect.php');
 				<div class="footer__inst">
 					<svg class="footer__svg" viewBox="0 0 521 512">
 						<g>
-							<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-46.0041" y1="634.1208"
-								x2="-32.9334" y2="647.1917" gradientTransform="matrix(32 0 0 -32 1519 20757)">
+							<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-46.0041" y1="634.1208" x2="-32.9334" y2="647.1917" gradientTransform="matrix(32 0 0 -32 1519 20757)">
 								<stop offset="0" style="stop-color:#ffc107" />
 								<stop offset="0.507" style="stop-color:#f44336" />
 								<stop offset="0.99" style="stop-color:#9c27b0" />
@@ -170,8 +154,7 @@ require_once(__DIR__ . '/php/connect.php');
 							<path style="fill:url(#SVGID_1_)" d="M352,0H160C71.648,0,0,71.648,0,160v192c0,88.352,71.648,160,160,160h192
 	c88.352,0,160-71.648,160-160V160C512,71.648,440.352,0,352,0z M464,352c0,61.76-50.24,112-112,112H160c-61.76,0-112-50.24-112-112
 	V160C48,98.24,98.24,48,160,48h192c61.76,0,112,50.24,112,112V352z" />
-							<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-42.2971" y1="637.8279"
-								x2="-36.6404" y2="643.4846" gradientTransform="matrix(32 0 0 -32 1519 20757)">
+							<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-42.2971" y1="637.8279" x2="-36.6404" y2="643.4846" gradientTransform="matrix(32 0 0 -32 1519 20757)">
 								<stop offset="0" style="stop-color:#ffc107" />
 								<stop offset="0.507" style="stop-color:#f44336" />
 								<stop offset="0.99" style="stop-color:#9c27b0" />
@@ -179,8 +162,7 @@ require_once(__DIR__ . '/php/connect.php');
 							<path style="fill:url(#SVGID_2_)" d="M256,128c-70.688,0-128,57.312-128,128s57.312,128,128,128s128-57.312,128-128
 	S326.688,128,256,128z M256,336c-44.096,0-80-35.904-80-80c0-44.128,35.904-80,80-80s80,35.872,80,80
 	C336,300.096,300.096,336,256,336z" />
-							<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-35.5456" y1="644.5793"
-								x2="-34.7919" y2="645.3331" gradientTransform="matrix(32 0 0 -32 1519 20757)">
+							<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-35.5456" y1="644.5793" x2="-34.7919" y2="645.3331" gradientTransform="matrix(32 0 0 -32 1519 20757)">
 								<stop offset="0" style="stop-color:#ffc107" />
 								<stop offset="0.507" style="stop-color:#f44336" />
 								<stop offset="0.99" style="stop-color:#9c27b0" />
@@ -202,38 +184,7 @@ require_once(__DIR__ . '/php/connect.php');
 	<script src="js/jquery-3.4.1.js"></script>
 	<script src="js/select.js"></script>
 	<script src="js/check.js"></script>
-	<script>
-		$(document).ready(function () {
-			$("#btnCom").bind("click", function () {
-				console.log(4);
-				var nameCom = $('#nameCom').val();
-				var textCom = $('#textCom').val();
-				console.log(nameCom);
-				console.log(textCom);
-
-				$('#nameCom').val('');
-				$('#textCom').val('');
-
-				$.ajax({
-					url: "form2.php",
-					type: "POST",
-					headers: {
-						'Access-Control-Allow-Origin': '*'
-					},
-					data: {
-						name: nameCom,
-						text: textCom,
-					}, // Передаем данные для записи
-					dataType: "json",
-					success: function (res) {
-
-						console.log(5);
-					}
-				});
-				return false;
-			});
-		});
-	</script>
+	<script src="js/form2.js"></script>
 	<script src="js/scroll.js"></script>
 </body>
 

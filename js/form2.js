@@ -10,7 +10,7 @@
 				$('#textCom').val('');
 
 				$.ajax({
-					url: "form2.php",
+					url: "../php/form2.php",
 					type: "POST",
 					headers: {
 						'Access-Control-Allow-Origin': '*'
@@ -20,9 +20,22 @@
 						text: textCom,
 					}, // Передаем данные для записи
 					dataType: "json",
-					success: function (res) {
+					success: function (result) {
 
-						console.log(5);
+						console.log(result);
+						console.log(result.length);
+
+						$('#comBody article').remove();
+						$('#comBody').append(function () {
+							var res = '';
+							for (var i = 0; i < result.length; i++) {
+								res += `<article class="comments__comment"><div class="comment__body"><p class="comment__name">${result[i]['name']}</p><p class="comment__text">${result[i]['text']}</p></div></article>`;
+							}
+							return res;
+						});
+
+
+						return false;
 					}
 				});
 				return false;

@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__ . '/connect.php');
 $name = $_POST['name'];
 $text = $_POST['text'];
 $sql = 'INSERT INTO test (name, text) VALUES (:n, :t) ';
@@ -7,9 +8,9 @@ $sth->bindParam(':n', $name);
 $sth->bindParam(':t', $text);
 $sth->execute();
 
-echo $name . ' ' . $text;
+// echo $name . ' ' . $text;
 
-$sql = 'SELECT * FROM test ORDER  BY id DESC LIMIT ' . $k;
+$sql = 'SELECT * FROM test ORDER  BY id DESC LIMIT 2';
 $sth = $dbh->prepare($sql);
 $sth->bindParam(':t', $k);
 $sth->execute();
