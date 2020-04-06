@@ -1,3 +1,6 @@
+<!-- <?php
+session_start();
+?> -->
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -116,23 +119,39 @@
 		<section id="sectiin-2" class="comments">
 			<div class="container">
 				<h2 class="order__title title">Оставить отзыв</h2>
-				<form action="index.php" method="POST" class="comments__form">
+				<form class="comments__form">
 					<div class="form form-comm">
 						<input type="text" class="form-comm__input" name="nameCom" id="nameCom" placeholder="Имя">
 						<input type="text" class="form-comm__input" name="textCom" id="textCom" placeholder="Текст">
 					</div>
 					<button type="button" class="form__button form-comm__button" id="btnCom">отправить</button>
 				</form>
-
-				<div id="comBody"></div>
+				<?php
+				require_once(__DIR__ . './php/connect.php');
+				$sql = 'SELECT * FROM test ORDER  BY id DESC LIMIT 2';
+				$sth = $dbh->prepare($sql);
+				$sth->bindParam(':t', $k);
+				$sth->execute();
+				$data = $sth->fetchAll(PDO::FETCH_ASSOC);
+				?>
+				<div id="comBody">
+					<?php foreach ($data as $value) { ?>
+						<article class="comments__comment">
+							<div class="comment__body">
+								<p class="comment__name"><?php echo $value['name'] ?></p>
+								<p class="comment__text"><?php echo $value['text'] ?></p>
+							</div>
+						</article>
+					<?php } ?>
+				</div>
 				<!-- <article class="comments__comment">
 					<div class="comment__body">
 						<p class="comment__name">Иван</p>
 						<p class="comment__text">Быстрая доставка. Хорошая техподдержка</p>
 					</div>
 				</article> -->
-				<form action="index.php" method="post" class="comments__form">
-					<button type="submit" class="form__button form-comm__button">показать еще</button>
+				<form class="comments__form">
+					<button type="submit" class="form__button form-comm__button" id="btnComAdd">показать еще</button>
 				</form>
 
 			</div>
@@ -185,6 +204,7 @@
 	<script src="js/select.js"></script>
 	<script src="js/check.js"></script>
 	<script src="js/form2.js"></script>
+	<script src="js/form3.js"></script>
 	<script src="js/scroll.js"></script>
 </body>
 

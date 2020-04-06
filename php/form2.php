@@ -12,7 +12,7 @@ $sth->execute();
 
 $sql = 'SELECT * FROM test ORDER  BY id DESC LIMIT 2';
 $sth = $dbh->prepare($sql);
-$sth->bindParam(':t', $k);
+// $sth->bindParam(':t', $k);
 $sth->execute();
 $data = $sth->fetchAll(PDO::FETCH_ASSOC);
 
