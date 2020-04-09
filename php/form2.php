@@ -1,16 +1,18 @@
 <?php
 require_once(__DIR__ . '/connect.php');
-$name = $_POST['name'];
-$text = $_POST['text'];
-$sql = 'INSERT INTO test (name, text) VALUES (:n, :t) ';
-$sth = $dbh->prepare($sql);
-$sth->bindParam(':n', $name);
-$sth->bindParam(':t', $text);
-$sth->execute();
+$name = htmlspecialchars($_POST['nameC']);
+$text = htmlspecialchars($_POST['textC']);
+
 
 // echo $name . ' ' . $text;
-
-$sql = 'SELECT * FROM test ORDER  BY id DESC LIMIT 2';
+if(trim($_POST['nameC']) != '' && trim($_POST['textC']) != ''){
+	$sql = 'INSERT INTO test (name, text) VALUES (:n, :t) ';
+	$sth = $dbh->prepare($sql);
+	$sth->bindParam(':n', $name);
+	$sth->bindParam(':t', $text);
+	$sth->execute();
+}
+$sql = 'SELECT * FROM test ORDER  BY id DESC LIMIT 3';
 $sth = $dbh->prepare($sql);
 // $sth->bindParam(':t', $k);
 $sth->execute();

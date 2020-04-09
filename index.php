@@ -131,7 +131,7 @@ function printPostValue($item)
 					длинных очередях и нести тяжёлые пакеты, пока ваши продукты едут к Вам.
 				</p>
 				<p class="description__text">
-					Мы любим свою работу и найдём подход к каждому клиенту
+					Мы любим свою работу и найдём подход к каждому клиенту.
 				</p>
 			</div>
 		</section>
@@ -142,10 +142,10 @@ function printPostValue($item)
 				<h2 class="order__title title">Оформить заказ</h2>
 				<form action="index.php" method="post" class="order__form form">
 					<!-- <?php
-					echo "<pre style='font-size: 24px;'>";
-					print_r($_POST);
-					echo "</pre>";
-					?> -->
+							echo "<pre style='font-size: 24px;'>";
+							print_r($_POST);
+							echo "</pre>";
+							?> -->
 					<?php checkValue($_POST['name'], 'Вы не ввели имя.'); ?>
 					<label for="name" class="form__label">ФИО</label>
 					<input type="text" id="name" name="name" value="<?php printPostValue($_POST['name']); ?>" class="form__input input-form">
@@ -194,7 +194,7 @@ function printPostValue($item)
 				</form>
 				<?php
 				require_once(__DIR__ . './php/connect.php');
-				$sql = 'SELECT * FROM test ORDER  BY id DESC LIMIT 2';
+				$sql = 'SELECT * FROM test ORDER  BY id DESC LIMIT 3';
 				$sth = $dbh->prepare($sql);
 				$sth->bindParam(':t', $k);
 				$sth->execute();

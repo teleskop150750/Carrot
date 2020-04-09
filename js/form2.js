@@ -16,8 +16,8 @@
 						'Access-Control-Allow-Origin': '*'
 					},
 					data: {
-						name: nameCom,
-						text: textCom,
+						nameC: nameCom,
+						textC: textCom,
 					}, // Передаем данные для записи
 					dataType: "json",
 					success: function (result) {
