@@ -3,8 +3,10 @@ checkL.addEventListener('mousedown', mouse);
 checkL.addEventListener('keydown', key);
 
 function key(e) {
+	console.log(e.keyCode);
 	if (e.keyCode == 32) {
-		ch();
+		console.log(3);
+		mouse();
 	}
 }
 

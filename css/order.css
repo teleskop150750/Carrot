@@ -1,3 +1,8 @@
+.error {
+	color: #c51f1f;
+	font-size: 0.7em;
+}
+
 .order {
 	padding: 2.5em 0 5.0em;
 }
@@ -16,21 +21,25 @@
 	background: #141414;
 	box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.35);
 
-	display: grid;
+	/* display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	grid-auto-rows: max-content;
+	grid-auto-rows: max-content; */
 }
 
 
 .form__label {
-	grid-column: 4 span;
+	/* grid-column: 4 span; */
+	display: block;
+	width: 100%;
 	margin-bottom: 0.3em;
 
 	font-size: 1em;
 }
 
 .form__input {
-	grid-column: 4 span;
+	/* grid-column: 4 span; */
+	display: block;
+	width: 100%;
 	margin-bottom: 0.8em;
 }
 
@@ -63,7 +72,7 @@
 	display: block;
 	position: relative;
 	padding-left: 1.4em;
-	margin-bottom: 0.3em;
+	/* margin-bottom: 0.3em; */
 
 	font-size: 0.8em;
 
@@ -121,7 +130,9 @@
 }
 
 .form__textarea {
-	grid-column: 4 span;
+	/* grid-column: 4 span; */
+	display: block;
+	width: 100%;
 	height: 160px;
 	max-width: 100%;
 	padding: 0.4em;
@@ -133,9 +144,13 @@
 	color: #d1d1d1;
 
 	border: none;
+	border: 1px solid #3d3d3d;
 	background: #1d1d1d;
 }
+.form__textarea:disabled {
+	border: 1px solid #1d1d1d;
 
+}
 .form__textarea:focus {
 	box-shadow: 0 1px var(--icolor);
 	outline: none;

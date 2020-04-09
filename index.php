@@ -1,13 +1,72 @@
-<!-- <?php
-session_start();
-?> -->
+<?php
+
+// Если заполненны все поля формы тогда готовим письмо и отпраляем
+if (!empty($_POST) && trim($_POST['name']) != '' && trim($_POST['tel']) != '') {
+	$mess = $_POST['message'] ?? null;
+	$mess = $_POST['check'] ?? null;
+	// Формируем текст письма
+	$message =  "Вам пришло новое сообщение с сайта: <br><br>\n" .
+		"<strong>Имя отправителя:</strong>" . strip_tags($_POST['name']) . "<br>\n" .
+		"<strong>Телефон отправителя: </strong>" . strip_tags($_POST['tel']) . "<br>\n" .
+		"<strong>Курьер: </strong>" . strip_tags($_POST['check']) . "<br>\n" .
+		"<strong>Сообщение: </strong>" . strip_tags($_POST['message']);
+
+	// Формируем тему письма, специально обрабатывая её
+	$subject = "=?utf-8?B?" . base64_encode("Сообщение с сайта!") . "?=";
+
+	// Указываем от кого будет отправлено письмо
+	$email_from = "info@web.ru";
+	$name_from = "Личный сайт портфолио";
+
+	// Формируем заголовки письма
+	$headers = "MIME-Version: 1.0" . PHP_EOL .
+		"Content-Type: text/html; charset=utf-8" . PHP_EOL .
+		"From: " . "=?utf-8?B?" . base64_encode($name_from) . "?=" . "<" . $email_from . ">" .  PHP_EOL .
+		"Reply-To: " . $email_from . PHP_EOL;
+
+	// Выполняем отправку письма
+	$sendResult = mail('teleskop150750@gmail.com', $subject, $message, $headers);
+
+	if ($sendResult) {
+		// Перенаправляем на страницу "Спасибо"
+		// header('location: thankyou.html');
+	} else {
+		$failure = "<div class=\"error\">Письмо не было отправлено. Повторите отправку еще раз.</div>";
+	}
+}
+
+
+// Проверка переменной на ее наличие и на заполненность
+function checkValue($item, $message)
+{
+	if (isset($item) && trim($item) == '') {
+		echo '<div class="error">' . $message . '</div>';
+	}
+}
+function checkValueMess($item, $message)
+{
+	if (!isset($_POST['check'])) {
+		if (isset($item) && trim($item) == '') {
+			echo '<div class="error">' . $message . '</div>';
+		}
+	}
+}
+
+// Распечатка заполненных полей из формы, если произошел вывод ошибок
+function printPostValue($item)
+{
+	if (isset($item) && strlen(trim($item)) > 0) {
+		echo $item;
+	}
+}
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Document</title>
+	<title>Carrot</title>
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/header.css">
@@ -81,34 +140,41 @@ session_start();
 		<section class="order">
 			<div class="container">
 				<h2 class="order__title title">Оформить заказ</h2>
-				<form action="" class="order__form form">
-
+				<form action="index.php" method="post" class="order__form form">
+					<!-- <?php
+					echo "<pre style='font-size: 24px;'>";
+					print_r($_POST);
+					echo "</pre>";
+					?> -->
+					<?php checkValue($_POST['name'], 'Вы не ввели имя.'); ?>
 					<label for="name" class="form__label">ФИО</label>
-					<input type="text" id="name" class="form__input input-form">
+					<input type="text" id="name" name="name" value="<?php printPostValue($_POST['name']); ?>" class="form__input input-form">
 
+					<?php checkValue($_POST['tel'], 'Вы не ввели телефон.'); ?>
 					<label for="tel" class="form__label">Телефон</label>
-					<input type="tel" id="tel" class="form__input input-form">
+					<input type="tel" id="tel" name="tel" value="<?php printPostValue($_POST['tel']); ?>" class="form__input input-form">
 
 					<p class="form__label">Выбрать магазин</p>
 					<div class="select-wrap">
 						<select class="select visually-hidden" name="select">
-							<option value="One">Пятерочка</option>
-							<option value="Two">Верный</option>
-							<option value="Three">Магнит</option>
-							<option value="Five">Перекресток</option>
-							<option value="Four">Другой магазин</option>
+							<option value="Пятерочка">Пятерочка</option>
+							<option value="Верный">Верный</option>
+							<option value="Магнит">Магнит</option>
+							<option value="Перекресток">Перекресток</option>
+							<option value="Другой магазин">Другой магазин</option>
 						</select>
 					</div>
 
 					<p class="form__label">Укажите продукты</p>
 
 					<label class="form__check-label label-ch">
-						<input type="checkbox" name="a" class="form__check visually-hidden">
+						<input type="checkbox" name="check" class="form__check visually-hidden">
 						<span class="check-box"></span>
 						передать курьеру
 					</label>
 
-					<textarea name="" class="form__textarea input-form"></textarea>
+					<?php checkValueMess($_POST['message'], 'Вы не ввели имя.'); ?>
+					<textarea name="message" class="form__textarea input-form"><?php printPostValue($_POST['message']); ?></textarea>
 
 					<button type="submit" class="form__button">Оформить</button>
 
@@ -144,15 +210,9 @@ session_start();
 						</article>
 					<?php } ?>
 				</div>
-				<!-- <article class="comments__comment">
-					<div class="comment__body">
-						<p class="comment__name">Иван</p>
-						<p class="comment__text">Быстрая доставка. Хорошая техподдержка</p>
-					</div>
-				</article> -->
-				<form class="comments__form">
-					<button type="submit" class="form__button form-comm__button" id="btnComAdd">показать еще</button>
-				</form>
+				<div class="comments__form">
+					<button type="button" class="form__button form-comm__button" id="btnComAdd">показать еще</button>
+				</div>
 
 			</div>
 		</section>
@@ -197,9 +257,6 @@ session_start();
 		</div>
 	</footer>
 
-	<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-	 	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-	 </script> -->
 	<script src="js/jquery-3.4.1.js"></script>
 	<script src="js/select.js"></script>
 	<script src="js/check.js"></script>
