@@ -67,7 +67,7 @@ function printPostValue($item)
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Carrot</title>
-	<link rel="stylesheet" href="css/fonts.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/description.css">
@@ -79,6 +79,7 @@ function printPostValue($item)
 
 <body>
 	<header class="header">
+		<div class="dark"></div>
 		<div class="container">
 			<div class="header__wrap">
 				<div class="header__nav-wrap">
@@ -113,7 +114,6 @@ function printPostValue($item)
 				</a>
 			</div>
 		</div>
-		<div class="dark"></div>
 	</header>
 
 	<main>
@@ -152,7 +152,7 @@ function printPostValue($item)
 
 					<?php checkValue($_POST['tel'], 'Вы не ввели телефон.'); ?>
 					<label for="tel" class="form__label">Телефон</label>
-					<input type="tel" id="tel" name="tel" value="<?php printPostValue($_POST['tel']); ?>" class="form__input input-form">
+					<input type="tel" id="tel" name="tel" value="<?php printPostValue($_POST['tel']); ?>" inputmode="tel" class="form__input input-form">
 
 					<p class="form__label">Выбрать магазин</p>
 					<div class="select-wrap">
@@ -173,8 +173,11 @@ function printPostValue($item)
 						передать курьеру
 					</label>
 
+
 					<?php checkValueMess($_POST['message'], 'Вы не ввели имя.'); ?>
 					<textarea name="message" class="form__textarea input-form"><?php printPostValue($_POST['message']); ?></textarea>
+
+					<p class="form__price">цена 199р</p>
 
 					<button type="submit" class="form__button">Оформить</button>
 
