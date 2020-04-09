@@ -1,0 +1,31 @@
+.mess-container {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mess__body{
+	padding: 1.4em;
+	border-radius: 1em;
+	background: #f0ecec;
+}
+
+.mess__link{
+	display: block;
+	padding: 0.6em 1.5em;
+	margin-top: 2.3em;
+	text-decoration: none;
+
+	font-size: 1.0em;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	color: #ffffff;
+
+	background: var(--icolor);
+	background: linear-gradient(to right, rgb(241, 105, 17), rgba(247, 173, 13, 0.774));
+	border: none;
+	border-radius: 0.6em;
+	cursor: pointer;
+}

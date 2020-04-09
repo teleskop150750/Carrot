@@ -29,7 +29,7 @@ if (!empty($_POST) && trim($_POST['name']) != '' && trim($_POST['tel']) != '') {
 
 	if ($sendResult) {
 		// Перенаправляем на страницу "Спасибо"
-		// header('location: thankyou.html');
+		header('location: /page/thankyou.html');
 	} else {
 		$failure = "<div class=\"error\">Письмо не было отправлено. Повторите отправку еще раз.</div>";
 	}
@@ -258,7 +258,12 @@ function printPostValue($item)
 	</footer>
 
 	<script src="js/jquery-3.4.1.js"></script>
-	<script src="js/select.js"></script>
+
+	<script src="js/jquery.inputmask.min.js"></script>
+	<!-- <script src="js/jquery.inputmask.min.js"></script> -->
+	<script src="js/mask.js">
+		< script src = "js/select.js" >
+	</script>
 	<script src="js/check.js"></script>
 	<script src="js/form2.js"></script>
 	<script src="js/form3.js"></script>

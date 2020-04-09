@@ -157,8 +157,8 @@
 }
 
 .form__button {
-	grid-column: 4 span;
-	justify-self: start;
+	/* grid-column: 4 span; */
+	/* justify-self: start; */
 	padding: 0.6em 1.5em;
 	margin-top: 2.3em;
 
