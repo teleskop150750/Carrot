@@ -263,12 +263,14 @@ function printPostValue($item)
 	<script src="js/jquery-3.4.1.js"></script>
 
 	<script src="js/jquery.inputmask.min.js"></script>
-	<!-- <script src="js/jquery.inputmask.min.js"></script> -->
 	<script src="js/mask.js"></script>
+
 	<script src="js/select.js"></script>
 	<script src="js/check.js"></script>
+
 	<script src="js/form2.js"></script>
 	<script src="js/form3.js"></script>
+	
 	<script src="js/scroll.js"></script>
 </body>
 
