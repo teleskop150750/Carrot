@@ -174,7 +174,7 @@ function printPostValue($item)
 					</label>
 
 
-					<?php checkValueMess($_POST['message'], 'Вы не ввели имя.'); ?>
+					<?php checkValueMess($_POST['message'], 'Вы не ввели продукты.'); ?>
 					<textarea name="message" class="form__textarea input-form"><?php printPostValue($_POST['message']); ?></textarea>
 
 					<p class="form__price">цена 199р</p>
